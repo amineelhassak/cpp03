@@ -1,29 +1,14 @@
 #include "ScavTrap.hpp"
 
-int main()
+int main( void )
 {
-	// Testing ClapTrap
-	{
-		std::cout << "Testing ClapTrap:" << std::endl;
-		ClapTrap clapTrap1("Clap1");
-		ClapTrap clapTrap2(clapTrap1);
-		ClapTrap clapTrap3 = clapTrap2;
-		clapTrap1.attack("Target1");
-		clapTrap2.takeDamage(5);
-		clapTrap3.beRepaired(2);
-	}
-	// Testing ScavTrap
-	{
-		std::cout << "\nTesting ScavTrap:" << std::endl;
-		ScavTrap scavTrap1("Scav1");
-		ScavTrap scavTrap2(scavTrap1);
-		ScavTrap scavTrap3 = scavTrap2;
-		std::string target = "Target2";
-		scavTrap1.attack(target);
-		scavTrap2.takeDamage(15);
-		scavTrap3.beRepaired(5);
-		scavTrap1.guardGate();
-	}
-
-	return 0;
+	ScavTrap scavTrap1("__ScavTrap__I");
+	ScavTrap scavTrap2(scavTrap1);
+	ScavTrap scavTrap3 = scavTrap2;
+	scavTrap1.attack("Target1");
+	scavTrap2.takeDamage(15);
+	scavTrap2.beRepaired(15);
+	scavTrap3.beRepaired(50);
+	scavTrap1.guardGate();
+	return (0);
 }
