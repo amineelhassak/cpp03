@@ -10,8 +10,11 @@ ClapTrap::ClapTrap (std::string name) : name(name), Hit_points(10), Energy_point
 void ClapTrap::attack (const std::string& target)    {
     if (Energy_points > 0)  {
         Energy_points--;
+        (void)target;
         std::cout << "ClapTrap : " << this->name <<  " attacks " << target << \
-                " , causing " << Attack_damage << " points of damage!" << std::endl;   } /*-----*/  }
+                " , causing " << Attack_damage << " points of damage!" << std::endl;   
+        } /*-----*/  
+        }
 
 ClapTrap &ClapTrap::operator = (const ClapTrap &clap) {
     if (this != &clap)  {
@@ -39,7 +42,7 @@ void ClapTrap::takeDamage (unsigned int amount)  {
 void ClapTrap::beRepaired (unsigned int amount)  {
     if (this->Hit_points == 0 || this->Energy_points == 0)
         std::cout << "ClapTrap : " << this->name << " already died ." << std::endl;
-    if (amount + Hit_points > 10)
+    if (amount + Hit_points > 100)
         std::cout << "ClapTrap : " << this->name << " The total exceeds 10." << std::endl;
     else
     {
