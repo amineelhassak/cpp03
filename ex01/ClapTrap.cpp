@@ -39,7 +39,7 @@ void ClapTrap::takeDamage (unsigned int amount)  {
 void ClapTrap::beRepaired (unsigned int amount)  {
     if (this->Hit_points == 0 || this->Energy_points == 0)
         std::cout << "ClapTrap : " << this->name << " already died ." << std::endl;
-    if (amount + Hit_points > 100)
+    if (amount + Hit_points > 100) //////// ???????????????????????????
         std::cout << "ClapTrap : " << this->name << " The total exceeds 10." << std::endl;
     else
     {
